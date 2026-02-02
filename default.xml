@@ -1,187 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="korg"
-           fetch="http://android-git.devnull.name/"
-           />
-  <default revision="gingerbread"
-           remote="korg" />
-  <remote name="gh" fetch="https://github.com/" />
-
-  <project path="build" name="ezterry/GB-build" remote="gh" revision="gingerbread" >
-    <copyfile src="core/root.mk" dest="Makefile" />
+  <remote fetch="https://github.com/" name="gh"/>
+  <remote fetch="http://android-git.devnull.name/" name="korg"/>
+  
+  <default remote="korg" revision="gingerbread"/>
+  
+  <project name="CyanogenMod/android_external_e2fsprogs" path="external/e2fsprogs" remote="gh" revision="b750e3926bfa42acafca716f7dfff8a5fb4ade38"/>
+  <project name="CyanogenMod/android_external_v8" path="external/v8" remote="gh" revision="a597c4f7ce9b02250cfa732a0ad21c8ea5d4f0cf"/>
+  <project name="CyanogenMod/android_packages_apps_FileManager" path="external/filemanager" remote="gh" revision="1a741e91daa727dc1de1af3d28e5649b66a26979"/>
+  <project name="device/common" revision="c491cd697e4bc16a52e3b1d254e4151ee3aad8bf"/>
+  <project name="device/htc/common" revision="867f8b454d754ff496b66527407753c451f54277"/>
+  <project name="device/sample" revision="3f6a489c7262c3a93f287ce58ea504cb92ada9bf"/>
+  <project name="ezterry/GB-Bionic" path="bionic" remote="gh" revision="13f1257783814e502b7c78cf36c733f60058f3c3"/>
+  <project name="ezterry/GB-EzGbExtras" path="packages/apps/EzGbExtras" remote="gh" revision="971a28c0d82190b26f2d3a18fb8504281780786e"/>
+  <project name="ezterry/GB-android_external_busybox" path="external/busybox" remote="gh" revision="adb507881c875ef1eb19b2c7eb9cbb68db6dea1f"/>
+  <project name="ezterry/GB-android_external_skia" path="external/skia" remote="gh" revision="816a79b73868bb36ab42d265b8c6e0d521d56e4e"/>
+  <project name="ezterry/GB-android_packages_apps_Superuser" path="external/superuser" remote="gh" revision="250566fdb607d12f9329e46b75249d4195c534b1"/>
+  <project name="ezterry/GB-build" path="build" remote="gh" revision="095bee807575ff81d623e2caec10ec55a32416e0">
+    <copyfile dest="Makefile" src="core/root.mk"/>
   </project>
-  <project path="bionic" name="ezterry/GB-Bionic" remote="gh" revision="gingerbread" />
-  <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
-  <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
-  <project path="bootable/recovery" name="platform/bootable/recovery" />
-  <project path="cts" name="platform/cts" />
-  <project path="dalvik" name="ezterry/GB-platform_dalvik" remote="gh" revision="gingerbread" />
-  <project path="development" name="ezterry/GB-development" remote="gh" revision="gingerbread" />
-  <project path="device/common" name="device/common" />
-  <project path="device/htc/common" name="device/htc/common" />
-
-  <!--Dream Sapphire-->
-  <project path="device/htc/dream-sapphire" name="ezterry/GB-device_htc_dream-sapphire" remote="gh" revision="gingerbread" />
-  <project path="device/htc/sapphire" name="ezterry/GB-device_htc_sapphire" remote="gh" revision="gingerbread" />
-
-  <project path="device/sample" name="device/sample" />
-  <project path="external/apache-http" name="platform/external/apache-http" />
-  <project path="external/astl" name="platform/external/astl" />
-  <project path="external/bison" name="platform/external/bison" />
-  <project path="external/blktrace" name="platform/external/blktrace" />
-  <project path="external/bluetooth/bluez" name="platform/external/bluetooth/bluez" />
-  <project path="external/bluetooth/glib" name="platform/external/bluetooth/glib" />
-  <project path="external/bluetooth/hcidump" name="platform/external/bluetooth/hcidump" />
-  <project path="external/bouncycastle" name="platform/external/bouncycastle" />
-  <project path="external/bsdiff" name="platform/external/bsdiff" />
-  <project path="external/busybox" name="ezterry/GB-android_external_busybox" remote="gh" revision="gingerbread" />
-  <project path="external/bzip2" name="platform/external/bzip2" />
-  <project path="external/chromium" name="platform/external/chromium" />
-  <project path="external/clearsilver" name="ezterry/GB-external_clearsilver" remote="gh" revision="gingerbread" />
-  <project path="external/dbus" name="platform/external/dbus" />
-  <project path="external/dhcpcd" name="platform/external/dhcpcd" />
-  <project path="external/dnsmasq" name="platform/external/dnsmasq" />
-  <project path="external/dropbear" name="platform/external/dropbear" />
-  <project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" remote="gh" revision="gingerbread" />
-  <project path="external/easymock" name="platform/external/easymock" />
-  <project path="external/elfcopy" name="platform/external/elfcopy" />
-  <project path="external/elfutils" name="platform/external/elfutils" />
-  <project path="external/embunit" name="platform/external/embunit" />
-  <project path="external/emma" name="platform/external/emma" />
-  <project path="external/esd" name="platform/external/esd" />
-  <project path="external/expat" name="platform/external/expat" />
-  <project path="external/fdlibm" name="platform/external/fdlibm" />
-  <project path="external/freetype" name="platform/external/freetype" />
-  <project path="external/fsck_msdos" name="platform/external/fsck_msdos" />
-  <project path="external/genext2fs" name="platform/external/genext2fs" />
-  <project path="external/giflib" name="platform/external/giflib" />
-  <project path="external/grub" name="platform/external/grub" />
-  <project path="external/gtest" name="platform/external/gtest" />
-  <project path="external/guava" name="platform/external/guava" />
-  <project path="external/icu4c" name="platform/external/icu4c" />
-  <project path="external/iproute2" name="platform/external/iproute2" />
-  <project path="external/ipsec-tools" name="platform/external/ipsec-tools" />
-  <project path="external/iptables" name="platform/external/iptables" />
-  <project path="external/jdiff" name="platform/external/jdiff" />
-  <project path="external/jhead" name="platform/external/jhead" />
-  <project path="external/jpeg" name="platform/external/jpeg" />
-  <project path="external/jsr305" name="platform/external/jsr305" />
-  <project path="external/junit" name="platform/external/junit" />
-  <project path="external/kernel-headers" name="platform/external/kernel-headers" />
-  <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/libgsm" name="platform/external/libgsm" />
-  <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" />
-  <project path="external/libpcap" name="platform/external/libpcap" />
-  <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/libvpx" name="platform/external/libvpx" />
-  <project path="external/libxml2" name="platform/external/libxml2" />
-  <project path="external/mtpd" name="platform/external/mtpd" />
-  <project path="external/netcat" name="platform/external/netcat" />
-  <project path="external/netperf" name="platform/external/netperf" />
-  <project path="external/neven" name="platform/external/neven" />
-  <project path="external/nist-sip" name="platform/external/nist-sip" />
-  <project path="external/oauth" name="platform/external/oauth" />
-  <project path="external/openssl" name="platform/external/openssl" />
-  <project path="external/oprofile" name="platform/external/oprofile" />
-  <project path="external/ping" name="platform/external/ping" />
-  <project path="external/ppp" name="platform/external/ppp" />
-  <project path="external/proguard" name="platform/external/proguard" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/qemu" name="platform/external/qemu" revision="tools_r7" />
-  <project path="external/quake" name="platform/external/quake" />
-  <project path="external/safe-iop" name="platform/external/safe-iop" />
-  <project path="external/skia" name="ezterry/GB-android_external_skia" remote="gh" revision="gingerbread" />
-  <project path="external/sonivox" name="platform/external/sonivox" />
-  <project path="external/speex" name="platform/external/speex" />
-  <project path="external/sqlite" name="ezterry/GB-external_sqlite" remote="gh" revision="gingerbread" />
-  <project path="external/srec" name="platform/external/srec" />
-  <project path="external/stlport" name="platform/external/stlport" />
-  <project path="external/strace" name="platform/external/strace" />
-  <project path="external/superuser" name="ezterry/GB-android_packages_apps_Superuser" remote="gh" revision="gingerbread" />
-  <project path="external/svox" name="platform/external/svox" />
-  <project path="external/tagsoup" name="platform/external/tagsoup" />
-  <project path="external/tcpdump" name="platform/external/tcpdump" />
-  <project path="external/filemanager" name="CyanogenMod/android_packages_apps_FileManager" remote="gh" revision="gingerbread" />
-  <project path="external/tinyxml" name="platform/external/tinyxml" />
-  <project path="external/tremolo" name="platform/external/tremolo" />
-  <project path="external/v8" name="CyanogenMod/android_external_v8"  remote="gh" revision="gingerbread" />
-  <project path="external/webkit" name="ezterry/GB-external_webkit" remote="gh" revision="gingerbread" />
-  <project path="external/wpa_supplicant" name="platform/external/wpa_supplicant" />
-  <project path="external/wpa_supplicant_6" name="platform/external/wpa_supplicant_6" />
-  <project path="external/xmlwriter" name="platform/external/xmlwriter" />
-  <project path="external/yaffs2" name="platform/external/yaffs2" />
-  <project path="external/zlib" name="platform/external/zlib" />
-  <project path="frameworks/base" name="ezterry/GB-framework_base" remote="gh" revision="gingerbread" />
-  <!--  project path="frameworks/base" name="platform/frameworks/base" / -->
-  <project path="frameworks/ex" name="platform/frameworks/ex" />
-  <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
-  <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" />
-  <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" />
-  <project path="hardware/msm7k" name="platform/hardware/msm7k" />
-  <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" />
-  <project path="hardware/qcom/gpsshim" name="ezterry/GB-hardware_qcom_gpsshim" remote="gh" revision="gingerbread" />
-  <project path="hardware/qcom/media" name="ezterry/GB-hardware_qcom_media" remote="gh" revision="gingerbread" />
-  <!-- project path="hardware/qcom/media" name="platform/hardware/qcom/media" / -->
-  <project path="hardware/ril" name="platform/hardware/ril" />
-  <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
-  <project path="hardware/ti/wlan" name="platform/hardware/ti/wlan" />
-  <project path="libcore" name="ezterry/GB-libcore" remote="gh" revision="gingerbread" />
-  <project path="ndk" name="platform/ndk" />
-  <project path="packages/apps/AccountsAndSyncSettings" name="platform/packages/apps/AccountsAndSyncSettings" />
-  <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" />
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" />
-  <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
-  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" />
-  <project path="packages/apps/Camera" name="platform/packages/apps/Camera" />
-  <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" />
-  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
-  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" />
-  <project path="packages/apps/Email" name="platform/packages/apps/Email" />
-  <project path="packages/apps/EzGbExtras" name="ezterry/GB-EzGbExtras" remote="gh" revision="gingerbread" />
-  <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
-  <project path="packages/apps/Gallery3D" name="ezterry/GB-packages_apps_Gallery3D" remote="gh" revision="gingerbread" />
-  <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
-  <project path="packages/apps/Launcher2" name="platform/packages/apps/Launcher2" />
-  <project path="packages/apps/Mms" name="ezterry/GB-packages_apps_Mms" remote="gh" revision="gingerbread" />
-  <project path="packages/apps/Music" name="platform/packages/apps/Music" />
-  <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" />
-  <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
-  <project path="packages/apps/Phone" name="ezterry/GB-packages_apps_Phone" remote="gh" revision="gingerbread" />
-  <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
-  <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
-  <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="ezterry/GB-packages_apps_settings" remote="gh" revision="gingerbread" />
-  <project path="packages/apps/SoundRecorder" name="ezterry/GB-packages_apps_SoundRecorder" remote="gh" revision="gingerbread" />
-  <project path="packages/apps/SpeechRecorder" name="platform/packages/apps/SpeechRecorder" />
-  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" />
-  <project path="packages/apps/Tag" name="platform/packages/apps/Tag" />
-  <project path="packages/apps/VoiceDialer" name="platform/packages/apps/VoiceDialer" />
-  <project path="packages/experimental" name="platform/packages/experimental" />
-  <project path="packages/inputmethods/LatinIME" name="ezterry/GB-packages_inputmethods_LatinIME" remote="gh" revision="gingerbread" />
-  <project path="packages/inputmethods/OpenWnn" name="platform/packages/inputmethods/OpenWnn" />
-  <project path="packages/providers/ApplicationsProvider" name="platform/packages/providers/ApplicationsProvider" />
-  <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" />
-  <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" />
-  <project path="packages/providers/DownloadProvider" name="ezterry/GB-packages_providers_DownloadProvider" remote="gh" revision="gingerbread" />
-  <project path="packages/providers/DrmProvider" name="platform/packages/providers/DrmProvider" />
-  <project path="packages/providers/GoogleContactsProvider" name="platform/packages/providers/GoogleContactsProvider" />
-  <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" />
-  <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" />
-  <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" />
-  <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" />
-  <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" />
-  <project path="packages/wallpapers/MagicSmoke" name="platform/packages/wallpapers/MagicSmoke" />
-  <project path="packages/wallpapers/MusicVisualization" name="platform/packages/wallpapers/MusicVisualization" />
-  <project path="prebuilt" name="platform/prebuilt" />
-  <project path="sdk" name="platform/sdk" revision="tools_r7" />
-  <project path="system/bluetooth" name="platform/system/bluetooth" />
-  <project path="system/core" name="ezterry/GB-system_core" remote="gh" revision="gingerbread" />
-  <!-- project path="system/core" name="platform/system/core" / -->
-  <project path="system/extras" name="ezterry/GB-system_extras" remote="gh" revision="gingerbread" />
-  <project path="system/media" name="platform/system/media" />
-  <project path="system/netd" name="platform/system/netd" />
-  <project path="system/vold" name="platform/system/vold" />
-  <project path="system/wlan/ti" name="platform/system/wlan/ti" />
-
-</manifest>
+  <project name="ezterry/GB-development" path="development" remote="gh" revision="c79da6fedeb426834124b0eff8d8cda2ed5837fa"/>
+  <project name="ezterry/GB-device_htc_dream-sapphire" path="device/htc/dream-sapphire" remote="gh" revision="e711d608222ce72e972596d18ecdfbd616fe20aa"/>
+  <project name="ezterry/GB-device_htc_sapphire" path="device/htc/sapphire" remote="gh" revision="9e1ee129fbf83274e1aec99d56315213a64111e3"/>
+  <project name="ezterry/GB-external_clearsilver" path="external/clearsilver" remote="gh" revision="273c2094288b9c2256a823172bc11bd1fd2be25b"/>
+  <project name="ezterry/GB-external_sqlite" path="external/sqlite" remote="gh" revision="4260bd38f168bfa5551930d56d9e6a629a684372"/>
+  <project name="ezterry/GB-external_webkit" path="external/webkit" remote="gh" revision="d41fb9f619d4003bdc33c4a577d5d2084b4991b2"/>
+  <project name="ezterry/GB-framework_base" path="frameworks/base" remote="gh" revision="99eb5a912d70b4cb294aaefc4f6f8b29bc46683d"/>
+  <project name="ezterry/GB-hardware_qcom_gpsshim" path="hardware/qcom/gpsshim" remote="gh" revision="245906215d0aa2acad1e5b8da7a723430b8a275a"/>
+  <project name="ezterry/GB-hardware_qcom_media" path="hardware/qcom/media" remote="gh" revision="19ebe14478c2fe9902af23ec659e8840bed5d942"/>
+  <project name="ezterry/GB-libcore" path="libcore" remote="gh" revision="d092e79c7dd8c37b7d09404afda9dc3bc83422c1"/>
+  <project name="ezterry/GB-packages_apps_Gallery3D" path="packages/apps/Gallery3D" remote="gh" revision="5524aedb80729cff0068533881b3931bbe87d25c"/>
+  <project name="ezterry/GB-packages_apps_Mms" path="packages/apps/Mms" remote="gh" revision="383b702b1119a758dc84b7a670a32c4038f7236c"/>
+  <project name="ezterry/GB-packages_apps_Phone" path="packages/apps/Phone" remote="gh" revision="2c464dc3d3bc9939babff01fd2fd3a616b731f17"/>
+  <project name="ezterry/GB-packages_apps_SoundRecorder" path="packages/apps/SoundRecorder" remote="gh" revision="58a013c54b2052e3eca5bbc6b64e4c08f83e877e"/>
+  <project name="ezterry/GB-packages_apps_settings" path="packages/apps/Settings" remote="gh" revision="b3381b3b09114d96060e28e1268d36c4812aab34"/>
+  <project name="ezterry/GB-packages_inputmethods_LatinIME" path="packages/inputmethods/LatinIME" remote="gh" revision="ae1c5849cba90c5669fd3b019bfdc3a9d0a12b6f"/>
+  <project name="ezterry/GB-packages_providers_DownloadProvider" path="packages/providers/DownloadProvider" remote="gh" revision="6e80b2af1fc13216a12f3cd5a866a96f629c4363"/>
+  <project name="ezterry/GB-platform_dalvik" path="dalvik" remote="gh" revision="47aee200abf580d13579f38c651c5ab9cb637312"/>
+  <project name="ezterry/GB-system_core" path="system/core" remote="gh" revision="e02dac4f6e6dc7c242025f94398644aef9e49b3d"/>
+  <project name="ezterry/GB-system_extras" path="system/extras" remote="gh" revision="c2df93c95089a617fb1d0f3ebfa98b1a82fb24e6"/>
+  <project name="platform/bootable/bootloader/legacy" path="bootable/bootloader/legacy" revision="d3271024770ddcc2fb87dd22f8280764545ab05a"/>
+  <project name="platform/bootable/diskinstaller" path="bootable/diskinstaller" revision="53bd9111b5ae1fc1180ec13755d9830f7cadacf5"/>
+  <project name="platform/bootable/recovery" path="bootable/recovery" revision="7172eb7b623f4b30f5a709d639fcd3fb51cd6220"/>
+  <project name="platform/cts" path="cts" revision="7e45cf25283c97a5d3300bba10c9d4a871d16c2b"/>
+  <project name="platform/external/apache-http" path="external/apache-http" revision="b91c5e936342afbdd58c88ac604d5dd505d0fe0c"/>
+  <project name="platform/external/astl" path="external/astl" revision="c3c760978c34d5eeea1205c0bf7f27444e192a98"/>
+  <project name="platform/external/bison" path="external/bison" revision="889df9c1efa7ca5de113407ab7793b57a6db677d"/>
+  <project name="platform/external/blktrace" path="external/blktrace" revision="ac4461c3b3e7bcbafe5336b9478657d0fa3e08aa"/>
+  <project name="platform/external/bluetooth/bluez" path="external/bluetooth/bluez" revision="02e98694ef87ea8ecb47789abf89c3f945ee0e20"/>
+  <project name="platform/external/bluetooth/glib" path="external/bluetooth/glib" revision="0c01eb3a7313a580fe34044bcdc3337d067c8a15"/>
+  <project name="platform/external/bluetooth/hcidump" path="external/bluetooth/hcidump" revision="ce36a6c7c5f8043c038415d8e270d55d9834008d"/>
+  <project name="platform/external/bouncycastle" path="external/bouncycastle" revision="d3cb3af5d0fdf6c1dc7c3c2c248261ff46c61219"/>
+  <project name="platform/external/bsdiff" path="external/bsdiff" revision="df980d633fd0bdc0b89af26630f543d91bb87e68"/>
+  <project name="platform/external/bzip2" path="external/bzip2" revision="879585bbef51b4cabaac6340a95d807dca379cdc"/>
+  <project name="platform/external/chromium" path="external/chromium" revision="5e43ad9465e402d595a3c960784b1effe2e9bd88"/>
+  <project name="platform/external/dbus" path="external/dbus" revision="4bda01d38f1ef164d76bb8e266caaabfd549ef9c"/>
+  <project name="platform/external/dhcpcd" path="external/dhcpcd" revision="17fdc0dee1db0246a59cd3b28278389043fe5134"/>
+  <project name="platform/external/dnsmasq" path="external/dnsmasq" revision="1b25960ebe33754410ba3c663c1c45662c779381"/>
+  <project name="platform/external/dropbear" path="external/dropbear" revision="d3a3a803df8f32e9ba26758b3a9d7fbd27a3dc9c"/>
+  <project name="platform/external/easymock" path="external/easymock" revision="17d5eb4006c438775d8eaa7600e947e4ac090a18"/>
